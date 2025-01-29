@@ -1,0 +1,355 @@
+/* Layout หลัก */
+body {
+  font-family: 'Kanit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Kanit', sans-serif;
+  color: #5B166C !important;
+}
+
+p, a, span, button {
+  font-family: 'Kanit', sans-serif;
+  color: #5B166C ;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #fbfbfb;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.wrapper{
+  background-color: #FFF5F6;
+}
+
+.text-color {
+  color: #5B166C !important;
+}
+
+.text-red{
+  color: #ff0000 !important;
+}
+
+.text-gray{
+  color: #7e7e7e !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.btn-no-border {
+  background: transparent;
+  border: none;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #5B166C; /* เปลี่ยนสีของ checkbox */
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.quantity-buttons button {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.card img {
+  object-fit: cover;
+}
+
+.menu-icon {
+  width: 50px;
+  height: auto;
+}
+
+.custom-btn {
+  background-color: transparent; /* พื้นหลังใส */
+  border: none; /* ไม่มีขอบ */
+  box-shadow: none; /* ไม่มีเงา */
+  outline: none; /* ไม่มีขอบที่เกิดจากการคลิก */
+  transition: none; /* ปิดการเปลี่ยนแปลงที่อาจทำให้ปุ่มขยับ */
+}
+
+.custom-btn:focus {
+  outline: none; /* ลบขอบเมื่อปุ่มได้รับการโฟกัส */
+  box-shadow: none; /* ลบเงา */
+  border: none;
+}
+
+
+
+@media (max-width: 768px) {
+  .menu-icon {
+    width: 30px;
+    margin-top: 40px;
+  }
+  .sidebar {
+    width: 0px;
+    background-color: #fff5f6;
+  }
+}
+
+.signin-container {
+  display: flex;
+  height: 100vh;
+}
+
+.signin-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.signin-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+input.form-control {
+  border: 1px solid #D8BABD; /* กำหนดสีกรอบเส้น */
+}
+.banner {
+  background-color: #D8BABD; /* สีพื้นหลัง */
+  text-align: center;
+  padding: 20px;
+}
+
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: -400px; 
+  width: 350px;
+  height: 50%;
+  background: #fff;
+  box-shadow: 0px 0 20px rgba(180, 80, 80, 0.3);
+  transition: left 0.5s ease;
+  z-index: 1050;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
+  
+}
+
+.sidebar-menu.open {
+  left: 0;  
+}
+
+.sidebar-content {
+  padding: 15px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.card-body {
+  overflow: hidden;        /* ซ่อนข้อความที่เกินขอบ */
+  text-overflow: ellipsis; /* แสดง ... เมื่อข้อความยาวเกิน */
+  white-space: nowrap;     /* ไม่ให้ข้อความแบ่งบรรทัด */
+}
+
+.table.borderless th, 
+.table.borderless td {
+    border: none !important;
+}
+
+.profile-image {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.border-custom{
+  border: 1px solid #D8BABD;
+}
+
+.custom-placeholder::placeholder {
+  font-family: 'kanit', sans-serif;
+  font-size: 14px;
+  color: #999;
+}
+.kanit{
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Slider.css */
+.horizontal-slider {
+    width: 50%;
+    height: 40px;
+    background: #000000;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.slider-thumb {
+    height: 30px;
+    width: 100px;
+    background-color: #ff0000;
+    color: rgb(0, 255, 55);
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    
+    font-size: 14px;
+}
+
+.slider-track {
+    top: 0;
+    bottom: 0;
+    background: #e8cdff;
+    border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px; /* ลดขนาด sidebar บนหน้าจอขนาดกลาง */
+  }
+  
+  .sidebar-menu {
+    width: 300px; /* ปรับขนาด sidebar menu ให้เล็กลง */
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 150px;
+    background-color: #fff5f6;
+    display: none;
+  }
+
+  .menu-icon {
+    width: 30px;
+    margin-top: 40px;
+  }
+
+  .sidebar-menu {
+    width: 250px; /* สำหรับมือถือ */
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    display: none; /* ซ่อน sidebar บนอุปกรณ์ขนาดเล็กมาก */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 300px;
+    padding: 15px;
+  }
+}
+
+/* Banner */
+.banner {
+  background-color: #D8BABD;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.banner-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 15px 0;
+  }
+
+  .banner-text {
+    font-size: 20px;
+  }
+}
+
+/* Slider Responsive */
+.horizontal-slider {
+  width: 100%; /* ทำให้ slider เต็มหน้าจอ */
+  height: 40px;
+  background: #000000;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  .horizontal-slider {
+    height: 30px;
+  }
+}
+
+.slider-thumb {
+  height: 30px;
+  width: 80px; /* ลดขนาด thumb */
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.slider-track {
+  background: #e8cdff;
+  border-radius: 20px;
+}
+
+/* Table Responsive */
+.table.borderless th, 
+.table.borderless td {
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 14px; /* ลดขนาดตัวอักษรในตาราง */
+  }
+}
+
+@media (max-width: 1440px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+.profile-image-large {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.top-layer {
+  position: absolute; /* หรือ absolute ขึ้นอยู่กับการจัดวาง */
+  z-index: 9999; /* ค่า z-index สูงๆ เพื่อให้เลเยอร์นี้อยู่บนสุด */
+}
