@@ -215,7 +215,7 @@ app.post('/signIn', async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: user.id, firstName: user.firstName, status: user.status },
+            { id: user.id, firstName: user.firstName, status: user.status, role: user.role },
             secret,
             { expiresIn: '30d' }
         );
@@ -239,6 +239,7 @@ app.get('/info', checkSignIn, async (req, res) => {
                 lastName: true,
                 userName: true,
                 imgProfile: true,
+                role: true,
             },
             where: {
                 id: userId

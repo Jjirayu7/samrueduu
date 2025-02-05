@@ -353,3 +353,11 @@ input.form-control {
   position: absolute; /* หรือ absolute ขึ้นอยู่กับการจัดวาง */
   z-index: 9999; /* ค่า z-index สูงๆ เพื่อให้เลเยอร์นี้อยู่บนสุด */
 }
+
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto !important; /* ป้องกันขนาดผิดพลาด */
+}

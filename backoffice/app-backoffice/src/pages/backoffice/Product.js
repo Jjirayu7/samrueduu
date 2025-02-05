@@ -279,6 +279,9 @@ function Product() {
             cost: '',
             stock: '',
             seasons: [],
+            toppic1: '',
+            toppic2: '',
+            toppic3: '',
             detail1: '',
             detail2: '',
             detail3: ''
@@ -743,6 +746,13 @@ function Product() {
                 </div>
              <div className="d-flex justify-content-between mt-3">        
                 <div style={{ flex: 1, marginRight: '10px' }}>
+                <h5 className="text-custom">หัวข้อส่วนที่ 1</h5>
+                    <textarea 
+                        rows="1"
+                        value={product.toppic1} 
+                        className="form-control"
+                        onChange={e => setProduct({ ...product, toppic1: e.target.value})}
+                        />
                     <h5 className="text-custom">คำบรรยายส่วนที่ 1</h5>
                     <textarea 
                         rows="4"
@@ -788,6 +798,13 @@ function Product() {
                     </button>
                 </div>
                 <div style={{ flex: 1, marginLeft: '20px' }}>
+                    <h5 className="text-custom">หัวข้อส่วนที่ 2</h5>
+                        <textarea 
+                            rows="1"
+                            value={product.toppic2} 
+                            className="form-control"
+                            onChange={e => setProduct({ ...product, toppic2: e.target.value})}
+                            />
                     <h5 className="text-custom">คำบรรยายส่วนที่ 2</h5>
                     <textarea 
                         rows="4"
@@ -802,6 +819,13 @@ function Product() {
                 </div>
              <div className="d-flex justify-content-between mt-3">        
                 <div style={{ flex: 1, marginRight: '10px' }}>
+                    <h5 className="text-custom">หัวข้อส่วนที่ 3</h5>
+                        <textarea 
+                            rows="1"
+                            value={product.toppic3} 
+                            className="form-control"
+                            onChange={e => setProduct({ ...product, toppic3: e.target.value})}
+                            />
                     <h5 className="text-custom">คำบรรยายส่วนที่ 3</h5>
                     <textarea 
                         rows="4"
@@ -899,6 +923,9 @@ function Product() {
                                             refImg3.current.value = '';
                                             setProduct({
                                                 ...item,
+                                                toppic1: item.toppic1 || '',
+                                                toppic2: item.toppic1 || '',
+                                                toppic3: item.toppic1 || '',
                                                 detail1: item.detail1 || '', 
                                                 detail2: item.detail2 || '',
                                                 detail3: item.detail3 || '',

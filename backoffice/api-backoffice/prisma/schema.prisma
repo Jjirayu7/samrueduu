@@ -26,6 +26,9 @@ model Product {
   img1    String? 
   img2 String?
   img3 String?
+  toppic1 String?
+  toppic2 String?
+  toppic3 String?
   detail1 String?
   detail2 String?
   detail3 String?
@@ -80,6 +83,7 @@ model UserCustomer {
   userCreatedAt DateTime  @default(now()) 
   updatedAt     DateTime  @updatedAt 
   imgProfile    String?
+  role          String    @default("customer")
   PasswordResetToken PasswordResetToken[]
 }
 

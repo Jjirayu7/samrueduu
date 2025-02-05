@@ -6,12 +6,6 @@ import { useParams } from "react-router-dom";
 import config from "../config";
 import Swal from "sweetalert2";
 import dayjs from "dayjs";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 
 function ProductInfo() {
@@ -269,7 +263,7 @@ function showImage3(product, setProduct) {
     }
     return <span>ไม่มีรูปภาพ</span>;
 }
-// ตั้งค่าเริ่มต้น
+
   return (
     <HomePage>
       <Helmet>
@@ -288,7 +282,7 @@ function showImage3(product, setProduct) {
                 backgroundColor: "#ffffff",
               }}
             >
-              <div style={{ width: '500px'}}>
+              <div>
                   {/* พรีวิวภาพที่เลือก */}
                   <div className="d-flex justify-content-center">
                       {selectedImage ? (
@@ -304,93 +298,33 @@ function showImage3(product, setProduct) {
                             src={`${config.apiPath}/uploads/${product.imgs[0]}`}
                             alt="Selected Product"
                             className="m-3 rounded-5"
-                            style={{ listStyle: "none", padding: 0, margin: 0, height: "300px" }}
+                            style={{ listStyle: "none", padding: 0, margin: 0, height: "300px"  }}
                         />
                       )}
-                      {/* <img
-                        src={`${config.apiPath}/uploads/${selectedImage}`}
-                        alt="Selected Product"
-                        className="m-3 rounded-5"
-                        style={{ height: "300px", objectFit: "contain", width: '500px' }}
-                      /> */}
-                  </div> 
+                  </div>
+
+                  
               </div>
             </div>
-                    <div className="container mt-5" style={{ width: '400px' }}>
-                      {/* <Swiper
-                        effect="coverflow"
-                        grabCursor={true}
-                        centeredSlides={true}
-                        loop={true}
-                        coverflowEffect={{
-                          rotate: 0,
-                          stretch: 0,
-                          depth: 100,
-                          modifier: 2.5,
-                        }}
-                        slidesPerView={3} // แสดง 3 รูปต่อหน้า
-                        spaceBetween={10}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[EffectCoverflow, Pagination, Navigation]}
-                        className="swiper_container"
-                      >
+              {/* แสดงรายการภาพ */}
+                    <ul className="d-flex justify-content-around mt-5" style={{ listStyle: "none", padding: 0, margin: 0 }}>
                         {product.imgs.map((img, index) => (
-                          <SwiperSlide key={index} className="ms-2">
-                            <img
-                              src={`${config.apiPath}/uploads/${img}`}
-                              alt={`product-${product.id}-${index}`}
-                              className="rounded-4 d-flex"
-                              style={{ width: '110px', height: '100px', cursor: 'pointer', objectFit: 'contain', }}
-                              onClick={() => handleImageClick(img)}
-                            />
-                          </SwiperSlide>
+                            <li key={index} className="m-2">
+                                <div
+                                    className="position-relative mr-2 mb-2"
+                                    style={{ width: '100px', height: '100px' }}
+                                >
+                                    <img
+                                        src={`${config.apiPath}/uploads/${img}`} // พาธของภาพ
+                                        alt={`product-${product.id}-${index}`}
+                                        className="w-100 rounded-4"
+                                        style={{ width: '150px', height: '100px', objectFit: 'cover' }}
+                                        onClick={() => handleImageClick(img)} // เมื่อคลิกภาพ
+                                    />
+                                </div>
+                            </li>
                         ))}
-                      </Swiper> */}
-                      <Swiper
-                        effect="coverflow"
-                        grabCursor={true}
-                        //centeredSlides={true}
-                        loop={product.imgs.length > 3}
-                        coverflowEffect={{
-                          rotate: 0,
-                          stretch: 0,
-                          // depth: 100,
-                          modifier: 0,
-                        }}
-                        slidesPerView={product.imgs.length < 3 ? product.imgs.length : 3}
-                        spaceBetween={10}
-                        pagination={{ clickable: true }}
-                        navigation={true}
-                        modules={[EffectCoverflow, Pagination, Navigation]}
-                        className="swiper_container"
-                        onSlideChange={(swiper) => setSelectedImage(product.imgs[swiper.realIndex])} // เปลี่ยนภาพพรีวิว
-                      >
-                        {product.imgs.map((img, index) => (
-                          <SwiperSlide key={index} className="d-flex justify-content-center"
-                          style={{
-                            boxShadow: "none", // ลบเงา
-                            borderRadius: "10px", // ลบขอบ
-                            padding: "0", // ลบ padding
-                          }}
-                          >
-                            <img
-                              src={`${config.apiPath}/uploads/${img}`}
-                              alt={`product-${product.id}-${index}`}
-                              className="rounded-4"
-                              style={{
-                                width: "110px",
-                                height: "100px",
-                                cursor: "pointer",
-                                objectFit: "cover",
-                              }}
-                              onClick={() => setSelectedImage(img)}
-                            />
-                          </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    </div>
-           
+                    </ul>
           </div>
           
           <div
